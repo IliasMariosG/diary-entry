@@ -21,4 +21,13 @@ describe Diary do
       expect(subject.entries.length).to eq 1
     end
   end
+
+  describe '#index' do
+    it 'shows only two titles separated by a new line' do
+      subject.add('title number one', 'body number one')
+      subject.add('title number two', 'body number two')
+
+      expect(subject.index).to eq 'title number one'"\n"'title number two'
+    end
+  end
 end
